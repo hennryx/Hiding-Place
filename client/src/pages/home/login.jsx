@@ -231,7 +231,7 @@ const Login = ({ isOpen, handleClose }) => {
                                             </div>
 
                                             <div>
-                                                <button
+                                                {/* <button
                                                     onClick={(e) =>
                                                         handleLoginDemo(
                                                             "superAdmin@gmail.com",
@@ -246,7 +246,7 @@ const Login = ({ isOpen, handleClose }) => {
                                                     } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500`}
                                                 >
                                                     Demo Super Admin Account
-                                                </button>
+                                                </button> */}
                                             </div>
                                             <div>
                                                 <button
