@@ -118,7 +118,7 @@ const AddNewUser = () => {
 
                         <button
                             className="flex items-center justify-center p-2 rounded-md whitespace-nowrap bg-[var(--primary-color)] text-[var(--text-primary-color)] hover:bg-[var(--primary-hover-color)] h-fit text-sm"
-                            onClick={() => toggleAdd((prev) => !prev)}
+                            onClick={() => setToggleAdd(!toggleAdd)}
                         >
                             <IoIosAdd />
                             Add New User

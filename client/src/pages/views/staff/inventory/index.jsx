@@ -13,8 +13,6 @@ import { IoIosAdd } from "react-icons/io";
 
 const info = {
     productName: "",
-    unit: "",
-    unitSize: "",
     containerType: "",
     sellingPrice: "",
     category: "",
@@ -164,78 +162,73 @@ const Inventory = () => {
                         <span>Add New Product</span>
                     </button>
                 </div>
-                {!toggleAdd && (
-                    <div>
-                        <div className="flex flex-row gap-4 justify-start items-center px-2 w-full">
-                            <Card
-                                title={"Total items"}
-                                textClr={"text-white"}
-                                boxClr={"bg-[var(--primary-color)]"}
-                                logo={BsBoxSeam}
-                                count={stocksInfo.totalNumberItems || 0}
-                                handleClick={handleClickHeader}
-                                value={"all"}
-                            />
-                            <Card
-                                title={"Out of Stock:"}
-                                textClr={"text-red-800"}
-                                boxClr={"bg-red-200"}
-                                logo={FaBoxOpen}
-                                count={stocksInfo.outStock || 0}
-                                handleClick={handleClickHeader}
-                                value={"stockOut"}
-                            />
-                            <Card
-                                title={"Low Stock:"}
-                                textClr={"text-yellow-800"}
-                                boxClr={"bg-yellow-200"}
-                                logo={BsBoxSeamFill}
-                                count={stocksInfo.minimumStock || 0}
-                                handleClick={handleClickHeader}
-                                value={"stockLow"}
-                            />
-                        </div>
+                <div>
+                    <div className="flex flex-row gap-4 justify-start items-center px-2 w-full">
+                        <Card
+                            title={"Total items"}
+                            textClr={"text-white"}
+                            boxClr={"bg-[var(--primary-color)]"}
+                            logo={BsBoxSeam}
+                            count={stocksInfo.totalNumberItems || 0}
+                            handleClick={handleClickHeader}
+                            value={"all"}
+                        />
+                        <Card
+                            title={"Out of Stock:"}
+                            textClr={"text-red-800"}
+                            boxClr={"bg-red-200"}
+                            logo={FaBoxOpen}
+                            count={stocksInfo.outStock || 0}
+                            handleClick={handleClickHeader}
+                            value={"stockOut"}
+                        />
+                        <Card
+                            title={"Low Stock:"}
+                            textClr={"text-yellow-800"}
+                            boxClr={"bg-yellow-200"}
+                            logo={BsBoxSeamFill}
+                            count={stocksInfo.minimumStock || 0}
+                            handleClick={handleClickHeader}
+                            value={"stockLow"}
+                        />
                     </div>
-                )}
+                </div>
 
-                {toggleAdd && (
-                    <EmbededModal
-                        handleToggle={handleToggle}
-                        setNewProduct={setNewProduct}
-                        newProduct={newProduct}
-                        isUpdate={isUpdate}
-                        isLoading={isLoading}
-                        pageInfo={pageInfo}
-                    />
-                )}
+                <EmbededModal
+                    open={toggleAdd}
+                    handleToggle={handleToggle}
+                    setNewProduct={setNewProduct}
+                    newProduct={newProduct}
+                    isUpdate={isUpdate}
+                    isLoading={isLoading}
+                    pageInfo={pageInfo}
+                />
 
                 <div className="flex flex-row gap-4">
-                    {!toggleAdd && (
-                        <div
-                            className={`transition-all duration-300 ease-in ${
-                                toggleReduce ? "w-2/3" : "w-full"
-                            }`}
-                        >
-                            <Table
-                                data={productsData}
-                                handleToggle={(status, key) =>
-                                    handleToggle(status, key)
-                                }
-                                handleUpdate={handleUpdate}
-                                handleReduceProduct={handleReduceProduct}
-                                isLoading={isLoading}
-                                loadData={handleFetch}
-                                totalPages={totalPages}
-                                allCategories={categories}
-                                _currentPage={currentPage}
-                                headerStatus={headerStatus}
-                                currentPage={currentPage}
-                                setCurrentPage={setCurrentPage}
-                                itemsPerPage={itemsPerPage}
-                                setItemsPerPage={setItemsPerPage}
-                            />
-                        </div>
-                    )}
+                    <div
+                        className={`transition-all duration-300 ease-in ${
+                            toggleReduce ? "w-2/3" : "w-full"
+                        }`}
+                    >
+                        <Table
+                            data={productsData}
+                            handleToggle={(status, key) =>
+                                handleToggle(status, key)
+                            }
+                            handleUpdate={handleUpdate}
+                            handleReduceProduct={handleReduceProduct}
+                            isLoading={isLoading}
+                            loadData={handleFetch}
+                            totalPages={totalPages}
+                            allCategories={categories}
+                            _currentPage={currentPage}
+                            headerStatus={headerStatus}
+                            currentPage={currentPage}
+                            setCurrentPage={setCurrentPage}
+                            itemsPerPage={itemsPerPage}
+                            setItemsPerPage={setItemsPerPage}
+                        />
+                    </div>
 
                     {!toggleAdd && toggleReduce && (
                         <div className="w-1/3 bg-white rounded-lg shadow-md transition-all duration-300 ease-in-out">

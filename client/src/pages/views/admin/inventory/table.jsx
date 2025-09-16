@@ -153,7 +153,6 @@ const Table = ({
         loadData({ page: 1, limit: _items });
     };
 
-    console.log(isLoading);
     return (
         <div className="overflow-x-auto min-h-fit bg-white shadow-md rounded-2xl">
             <table className="table table-auto">
