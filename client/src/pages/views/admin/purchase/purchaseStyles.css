@@ -1,0 +1,16 @@
+.no-spinner::-webkit-inner-spin-button,
+.no-spinner::-webkit-outer-spin-button {
+  margin: 0;
+}
+
+.no-spinner {
+  -moz-appearance: textfield;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);  
+  color: black;
+  opacity: 1;
+  display: block;
+  cursor: pointer;
+}

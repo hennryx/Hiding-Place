@@ -1,0 +1,47 @@
+{
+  "name": "camilles-inventory",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "build": "echo 'No build step needed for this backend' || exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hennryx/camilles-inventory.git"
+  },
+  "keywords": [],
+  "author": "Hennryx R. Samson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hennryx/camilles-inventory/issues"
+  },
+  "homepage": "https://github.com/hennryx/camilles-inventory#readme",
+  "description": "",
+  "dependencies": {
+    "@clerk/clerk-sdk-node": "^4.13.23",
+    "bcryptjs": "^3.0.2",
+    "cloudinary": "^2.7.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "cron": "^4.3.3",
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.15.0",
+    "mongoose": "^8.13.2",
+    "multer": "^1.4.5-lts.2",
+    "nodemailer": "^6.10.1",
+    "passport": "^0.7.0",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth20": "^2.0.0",
+    "qrcode": "^1.5.4",
+    "sharp": "^0.34.3",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

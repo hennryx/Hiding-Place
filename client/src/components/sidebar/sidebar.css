@@ -1,0 +1,154 @@
+.sidebar-main {
+    transition: width 0.5s ease-in-out;
+}
+
+.sidebar ul li {
+    color: var(--background-color);
+    background-color: transparent;
+}
+
+.sidebar ul li .active {
+    background-color: var(--background-color);
+    color: black;
+    border-top-left-radius: 1.2rem;
+    border-bottom-left-radius: 1.2rem;
+    position: relative;
+    transition: background-color 0.3s, color 0.3s ease;
+}
+
+.sidebar ul li .active b:nth-child(1) {
+    background-color: var(--background-color);
+    width: 100%;
+    position: absolute;
+    top: -1rem;
+    left: 0;
+    height: 1em;
+    transition: all 0.3s ease;
+}
+
+.sidebar ul li .active b:nth-child(2) {
+    background-color: var(--background-color);
+    width: 100%;
+    position: absolute;
+    bottom: -1rem;
+    left: 0;
+    height: 1em;
+    transition: all 0.3s ease;
+}
+
+.sidebar ul li .active b:nth-child(1)::before {
+    content: "";
+    position: absolute;
+    background-color: var(--primary-color);
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-bottom-right-radius: 1.2rem;
+    transition: border-radius 0.3s ease, background-color 0.3s ease;
+}
+
+.sidebar ul li .active b:nth-child(2)::before {
+    content: "";
+    position: absolute;
+    background-color: var(--primary-color);
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-top-right-radius: 1.2rem;
+    transition: border-radius 0.3s ease, background-color 0.3s ease;
+}
+
+.sidebar ul li div,
+.sidebar ul li a {
+    transition: background-color 0.2s ease, color 0.2s ease, padding 0.2s ease;
+}
+
+/* Account section styles */
+.account-collapsed {
+    height: auto;
+    min-height: 60px;
+}
+
+.account-expanded {
+    height: 200px;
+    max-height: 200px;
+}
+
+.account-header-collapsed {
+    height: 60px;
+}
+
+.account-header-expanded {
+    height: 60px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.account-menu-container {
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.account-menu-closed {
+    max-height: 0;
+    opacity: 0;
+}
+
+.account-menu-open {
+    max-height: 140px;
+    opacity: 1;
+}
+
+/* Navigation scrollable styles */
+.navigation-container {
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.navigation-container::-webkit-scrollbar {
+    width: 4px;
+}
+
+.navigation-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.navigation-container::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+}
+
+.navigation-container::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Smooth scroll behavior */
+.navigation-container {
+    scroll-behavior: smooth;
+    overflow: hidden;
+}
+
+.ul-test {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    padding-left: 17px; 
+    box-sizing: content-box;
+}
+/* Ensure proper flex layout */
+.sidebar-main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.sidebar {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
